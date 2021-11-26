@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import Card from './components/Card'
 import './App.css';
+import { useSelector, useDispatch } from 'react-redux'
+import { addCard } from './reducer/cardsSlice'
+import { cardSelector } from './selectors/wallet';
 
-function App() {
+const getStripe = async () => {
+  return await fetch('https://random-data-api.com/api/stripe/random_stripe')
+  .then(response => response.json())
+  .then(data => {console.log(data); return data});
+}
+
+const App = () => {
+  const cards = useSelector(cardSelector) || []
+  const dispatch = useDispatch()
+
+  const handleClick = async () => {
+    const card = await getStripe()
+    dispatch(addCard(card))
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={handleClick} >add card</button>
+      <div>
+        {cards.map(data => {
+          console.log({data})
+          return <Card data={data} />
+        })}
+      </div>
     </div>
   );
 }
