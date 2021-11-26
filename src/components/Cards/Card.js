@@ -1,14 +1,13 @@
 import React from 'react'
-import { CardContainer, CardNumber, DeleteButton, Expiry } from './Cards.style'
-import { deleteCard } from '../reducer/cardsSlice'
+import { CardContainer, CardNumber, DeleteButton, Expiry } from './Card.style'
+import { deleteCard } from '../../reducer/cardsSlice'
 import { useDispatch } from 'react-redux'
 
-const Card = ({data}) => {
+const Card = ({card}) => {
   const dispatch = useDispatch()
-  const { valid_card: cardNumber, month, year, id} = data
+  const { valid_card: cardNumber, month, year, id} = card
 
   const handleDelete = () => {
-    console.log('delete')
     dispatch(deleteCard(id))
   }
 
