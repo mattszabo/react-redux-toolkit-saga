@@ -6,7 +6,7 @@ import { cardSelector } from '../../selectors/wallet';
 import CardControls from './CardControls';
 
 const Cards = () => {
-  const cards = useSelector(cardSelector) || []
+  const cards = useSelector(cardSelector)
   
   return (
     <CardsContainer>
