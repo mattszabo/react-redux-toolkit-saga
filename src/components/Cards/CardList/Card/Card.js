@@ -1,6 +1,6 @@
 import React from 'react'
 import { CardContainer, CardNumber, DeleteButton, Expiry } from './Card.style'
-import { deleteCard } from '../../reducer/cardsSlice'
+import { deleteCard } from '../../../../reducer/cardsSlice'
 import { useDispatch } from 'react-redux'
 
 const Card = ({card}) => {

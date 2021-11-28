@@ -1,6 +1,6 @@
 import React from 'react'
 import { CardListContainer } from './CardList.style'
-import Card from './Card'
+import Card from './Card/Card'
 
 const CardList = ({cards}) => {
   return (

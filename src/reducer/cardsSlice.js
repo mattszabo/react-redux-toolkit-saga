@@ -13,10 +13,12 @@ export const cardsSlice = createSlice({
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
+      // state.cards.push(action.payload)
+      
       return {cards: [...state.cards, action.payload]}
     },
     deleteCard: (state, action) => {
-      return {cards: state.cards.filter(({id}) => id !== action.payload)}
+      state.cards = state.cards.filter(({id}) => id !== action.payload)
     }
   },
 })

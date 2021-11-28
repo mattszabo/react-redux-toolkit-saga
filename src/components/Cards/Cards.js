@@ -1,9 +1,10 @@
 import React from 'react'
-import {CardsContainer} from './Cards.style'
-import CardList from './CardList'
+import { CardsContainer } from './Cards.style'
+import CardList from './CardList/CardList'
 import { useSelector } from 'react-redux'
 import { cardSelector } from '../../selectors/wallet';
-import CardControls from './CardControls';
+import CardControls from './CardControls/CardControls';
+
 
 const Cards = () => {
   const cards = useSelector(cardSelector)
