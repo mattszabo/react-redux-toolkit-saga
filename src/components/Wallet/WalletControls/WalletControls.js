@@ -2,8 +2,9 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { addCard } from '../../../reducer/cardsSlice'
 import { fetchCard } from '../../../services/cards'
+import * as styles from './WalletControls.style'
 
-const CardControls = () => {
+const WalletControls = () => {
   const dispatch = useDispatch()
 
   const handleClick = async () => {
@@ -12,8 +13,10 @@ const CardControls = () => {
   }
    
   return (
-    <button onClick={handleClick} >add card</button>
+    <styles.Container>
+      <styles.Button onClick={handleClick} >add card</styles.Button>
+    </styles.Container>
   )
 }
 
-export default CardControls
+export default WalletControls

@@ -1,10 +1,11 @@
-import Cards from './components/Cards/Cards'
+import Wallet from './components/Wallet/Wallet'
 import './App.css';
 
 const App = () => {
   return (
-    <div className="App">
-      <Cards />
+    <div className="app">
+      <div className="menu">menu</div>
+      <Wallet />
     </div>
   );
 }

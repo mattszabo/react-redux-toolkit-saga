@@ -1,19 +1,20 @@
 import React from 'react'
-import { CardsContainer } from './Cards.style'
+import * as styles from './Wallet.style'
 import CardList from './CardList/CardList'
 import { useSelector } from 'react-redux'
 import { cardSelector } from '../../selectors/wallet';
-import CardControls from './CardControls/CardControls';
+import CardsControls from './WalletControls/WalletControls';
 
 
 const Cards = () => {
   const cards = useSelector(cardSelector)
   
   return (
-    <CardsContainer>
-      <CardControls />
+    <styles.WalletContainer>
+      <styles.Header>Wallet</styles.Header>
+      <CardsControls />
       <CardList cards={cards} />
-    </CardsContainer>
+    </styles.WalletContainer>
   )
 }
 
